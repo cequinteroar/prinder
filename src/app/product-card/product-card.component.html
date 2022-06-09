@@ -1,5 +1,8 @@
 <div *ngIf="displayProd; else showDescription" class="product-card" (click)="seeMore()">
     <p class="product-name">{{product.name}}</p>
+    <div class="product-badges">
+        <app-product-badge [badge]="badge" *ngFor="let badge of badges; let i = index" [attr.data-index]="i"></app-product-badge>
+    </div>
     <img class="product-img" src={{backgroundImage}} />
     <div class="product-description">
         <p>{{product.shortDescription}}</p>
