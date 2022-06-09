@@ -1,4 +1,17 @@
-<div class="product-card">
+<div *ngIf="displayProd; else showDescription" class="product-card" (click)="seeMore()">
     <p class="product-name">{{product.name}}</p>
     <img class="product-img" src={{backgroundImage}} />
+    <div class="product-description">
+        <p>{{product.shortDescription}}</p>
+        <p class="product-description--price">&#8364; {{product.price}}</p>
+    </div>
+    <p>{{product.manufacturer}}</p>
 </div>
+<ng-template #showDescription>
+    <div class="product-card" (click)="seeMore()">
+        <p class="product-name">{{product.name}}</p>
+        <div class="product-seemore">
+            <div [innerHTML]="productDesc"></div>
+        </div>
+    </div>
+</ng-template>

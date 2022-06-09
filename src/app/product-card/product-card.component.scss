@@ -9,17 +9,43 @@
     background-size: cover !important;
     flex-direction: column;
 
+    > p {
+        font-style: italic;
+    }
+
     .product-name {
+        color: #1976d2;
         text-align: center;
         font-weight: bold;
         font-size: large;
         padding-top: 2rem;
-        box-shadow:0px 1px 0px black;
+        box-shadow:0px 1px 0px #1976d2;
         width: 80%;
         padding-bottom: 1rem;
     }
 
     .product-img {
         height: 70%;
+    }
+
+    .product-description {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+
+        p {
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+
+        .product-description--price {
+            font-weight: bold;
+        }
+    }
+
+    .product-seemore {
+        margin: 1.5rem;
+
     }
 }

@@ -9,6 +9,7 @@ export interface product {
     shortDescription: string,
     description: string,
     priority: number,
+    price: number,
     mustVendFirst: boolean,
     produceTime: number,
     attributes: attribute[],
