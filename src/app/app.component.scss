@@ -125,6 +125,38 @@
 }
 
 .card-buttons {
-    flex: 1;
-    align-self: flex-end;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    .button {
+        width: 3rem;
+        height: 3rem;
+        border-radius: 50%;
+        border: 1px solid;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: transparent;
+        margin-left: 1rem;
+        margin-right: 1rem;
+
+        &.like {
+            border-color: green;
+            padding-top: 0.25rem;
+            padding-left: 0.5rem;
+
+            &:hover {
+                background-color: rgba(106, 192, 99, 0.493);
+            }
+        }
+
+        &.dislike {
+            border-color: red;
+
+            &:hover {
+                background-color: rgba(192, 99, 99, 0.493);
+            }
+        }
+    }
 }
