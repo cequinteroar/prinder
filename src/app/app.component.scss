@@ -2,3 +2,21 @@
     color: black;
     font-size: 1.3rem;
 }
+
+.content {
+    .content--small {
+        flex: 1;
+    }
+}
+
+.card-container {
+  width: 60%;
+  flex: 8;
+  padding: 0.5rem;
+  margin: 1rem;
+}
+
+.card-buttons {
+    flex: 1;
+    align-self: flex-end;
+}

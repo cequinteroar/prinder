@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { product } from 'src/models/product';
 
 @Component({
   selector: 'app-product-card',
@@ -6,10 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./product-card.component.scss']
 })
 export class ProductCardComponent implements OnInit {
+  @Input() product: product = {} as product;
+  backgroundImage: string = "";
+  private defaultImage: string = "../../assets/box2-fill.svg"
 
-  constructor() { }
+  constructor() {
+   }
 
   ngOnInit(): void {
+    this.backgroundImage = "url("+this.product.imageSet ? this.product.imageSet[0].url : this.defaultImage+")";
+    console.log(this.product);
   }
 
 }
