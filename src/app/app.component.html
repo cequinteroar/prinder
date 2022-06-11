@@ -35,15 +35,15 @@
   <p class="content--small">Like your desired product:</p>
 
   <div class="card-container">
-    <app-product-card [product]="currentProduct"></app-product-card>
+    <app-product-card [showNoneProducts]="showNoneProducts" [product]="currentProduct"></app-product-card>
   </div>
  
   <!-- Links -->
   <div class="card-buttons">
     <button class="button dislike">
-      <img width="32" src="../assets/x.svg">
+      <img width="32" src="../assets/x.svg" (click)="dislike()">
     </button>
-    <button class="button like">
+    <button class="button like" (click)="like()">
       <img width="20" height="20" src="../assets/heart-fill.svg">
     </button>
   </div>

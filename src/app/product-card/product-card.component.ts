@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, SimpleChanges } from '@angular/core';
 import { attribute } from 'src/models/attribute';
 import { product } from 'src/models/product';
 
@@ -9,6 +9,7 @@ import { product } from 'src/models/product';
 })
 export class ProductCardComponent implements OnInit {
   @Input() product: product = {} as product;
+  @Input() showNoneProducts: boolean = false;
   backgroundImage: string = "";
   productDesc: string = "";
   displayProd: boolean = true;
@@ -27,8 +28,14 @@ export class ProductCardComponent implements OnInit {
   }
 
   seeMore(): void {
-    const newValue = !this.displayProd
+    const newValue = !this.displayProd;
     this.displayProd = newValue;
   }
 
+  ngOnChanges(changes: SimpleChanges) {
+    // changes.prop contains the old and the new value...
+    const currentProduct = changes['product'].currentValue;
+    if(currentProduct)
+      this.backgroundImage = "url("+currentProduct.imageSet ? currentProduct.imageSet[0].url : this.defaultImage+")";
+  }
 }

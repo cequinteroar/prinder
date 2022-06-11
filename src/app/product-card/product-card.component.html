@@ -1,4 +1,5 @@
-<div *ngIf="displayProd; else showDescription" class="product-card" (click)="seeMore()">
+<div *ngIf="!showNoneProducts; else noneProducts" >
+    <div *ngIf="displayProd; else showDescription" class="product-card" (click)="seeMore()">
     <p class="product-name">{{product.name}}</p>
     <div class="product-badges">
         <app-product-badge [badge]="badge" *ngFor="let badge of badges; let i = index" [attr.data-index]="i"></app-product-badge>
@@ -15,6 +16,16 @@
         <p class="product-name">{{product.name}}</p>
         <div class="product-seemore">
             <div [innerHTML]="productDesc"></div>
+        </div>
+    </div>
+</ng-template>
+</div>
+<ng-template #noneProducts>
+    <div class="product-card">
+        <p class="product-name">No more products found</p>
+        <div class="product-empty">
+            <p class="product-seemore">Please wait until there are more products available!</p>
+            <img class="" width="100" height="100" src="../../assets/emoji-frown-fill.svg" />
         </div>
     </div>
 </ng-template>
