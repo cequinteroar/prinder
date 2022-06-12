@@ -62,10 +62,5 @@ export class AppComponent implements OnInit{
     const currentProduct = newProducts[0];
     this.setCurrentProduct(currentProduct);
     this.noItemsManager();
-  }
-  
-  //  Observable things
-  // search(term: string): void {
-  //   this.searchTerms.next(term);
-  // }
+  }  
 }

@@ -35,7 +35,9 @@ export class ProductCardComponent implements OnInit {
   ngOnChanges(changes: SimpleChanges) {
     // changes.prop contains the old and the new value...
     const currentProduct = changes['product'].currentValue;
-    if(currentProduct)
+    if(currentProduct){
       this.backgroundImage = "url("+currentProduct.imageSet ? currentProduct.imageSet[0].url : this.defaultImage+")";
+      this.productDesc = currentProduct.description;
+    }
   }
 }

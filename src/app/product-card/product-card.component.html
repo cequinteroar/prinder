@@ -1,24 +1,25 @@
-<div *ngIf="!showNoneProducts; else noneProducts" >
+<div *ngIf="!showNoneProducts; else noneProducts">
     <div *ngIf="displayProd; else showDescription" class="product-card" (click)="seeMore()">
-    <p class="product-name">{{product.name}}</p>
-    <div class="product-badges">
-        <app-product-badge [badge]="badge" *ngFor="let badge of badges; let i = index" [attr.data-index]="i"></app-product-badge>
-    </div>
-    <img class="product-img" src={{backgroundImage}} />
-    <div class="product-description">
-        <p>{{product.shortDescription}}</p>
-        <p class="product-description--price">&#8364; {{product.price}}</p>
-    </div>
-    <p>{{product.manufacturer}}</p>
-</div>
-<ng-template #showDescription>
-    <div class="product-card" (click)="seeMore()">
         <p class="product-name">{{product.name}}</p>
-        <div class="product-seemore">
-            <div [innerHTML]="productDesc"></div>
+        <div class="product-badges">
+            <app-product-badge [badge]="badge" *ngFor="let badge of badges; let i = index" [attr.data-index]="i">
+            </app-product-badge>
         </div>
+        <img class="product-img" src={{backgroundImage}} />
+        <div class="product-description">
+            <p>{{product.shortDescription}}</p>
+            <p class="product-description--price">&#8364; {{product.price}}</p>
+        </div>
+        <p>{{product.manufacturer}}</p>
     </div>
-</ng-template>
+    <ng-template #showDescription>
+        <div class="product-card" (click)="seeMore()">
+            <p class="product-name">{{product.name}}</p>
+            <div class="product-seemore">
+                <div [innerHTML]="productDesc"></div>
+            </div>
+        </div>
+    </ng-template>
 </div>
 <ng-template #noneProducts>
     <div class="product-card">
