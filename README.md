@@ -1,27 +1,21 @@
 # Prinder
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.0.
+This project represents a tinder way to show products and like them or dislike them.
+The project was totally done with Angular, sass, javascript and observables.
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`.
 
-## Code scaffolding
+## Coding style
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+The coding style I used is modular, where the tinder card of the product can be portable.
+All the needed functionalities related to fetching data were separated into services.
+All the interfaces for the products, attributes, etc are located inside the folder models, trying to preserve the MVC pattern.
 
-## Build
+## What was considered?
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+For the development was done research about dating apps, taking as reference tinder and bumble. The card presentation was taken from the way those apps show a person.
+The colours were chosen in order to be simplistic, where blue, white and black were the main colours and red and green were indicator colours for actions (e.g. like and dislike).
+All the icons were taken from https://icons.getbootstrap.com/
