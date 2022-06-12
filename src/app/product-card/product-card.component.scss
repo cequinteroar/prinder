@@ -36,6 +36,11 @@
     .product-img {
         height: 70%;
         cursor: default;
+
+        &:hover {
+            opacity: 0.8;
+            color: black;
+        }
     }
 
     .product-description {
@@ -66,5 +71,10 @@
         justify-content: center;
         align-items: center;
         margin-top: 4rem;
+    }
+
+    &:active {
+        transform: scale(0.8);
+        transition-duration: 0.7s;
     }
 }
