@@ -29,7 +29,7 @@ export class AppComponent implements OnInit{
     const x = observInterval.subscribe((val) => this.dataMachineService.search().subscribe(
       data => {
         console.log(data);
-        if(val > 0 && (data[val -1].id !== data[val])){
+        if(val > 0 && (data[val -1]?.id !== data[val]?.id)){
           this.products.push(data[val]);
         }
       }
