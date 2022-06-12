@@ -23,7 +23,6 @@ export class ProductService implements OnInit {
 
   setNewLikedProduct(likedProduct: product){
     this.likedProducts.push(likedProduct);
-    JSON.stringify(this.likedProducts);
   }
 
   setNewDislikedProduct(dislikedProduct: product){
